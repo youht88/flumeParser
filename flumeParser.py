@@ -1,7 +1,6 @@
 import os
 import json
 
-
 class FlumeParser:
     def __init__(self,agent,configFile,defaultFile,flumeFile):
         self.agent=agent
