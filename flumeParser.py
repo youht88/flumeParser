@@ -8,7 +8,7 @@ class FlumeParser:
         self.defaultFile = defaultFile
         self.flumeFile = flumeFile
         self.componts={"sources":{"netcat":"rNetcat","netcatudp":"rNetcatudp","http":"rHTTP",
-                                  "org.apache.flume.source.kafka.KafkaSource":"rKafka",
+                                  "org.apache.flume.source.kafka.KafkaSource":"rKafka","TAILDIR":"rTaildir",
                                   "avro":"rAvro","multiports_syslogtcp":"rMultiportsSyslogtcp"},
                         "sinks":{"logger":"kLogger","avro":"kAvro","hdfs":"kHDFS","file_roll":"kFileRoll",
                                  "org.apache.flume.sink.elasticsearch.ElasticSearchSink":"kES","http":"kHTTP",
@@ -26,6 +26,7 @@ class FlumeParser:
                          "rKafka":["type","kafka.bootstrap.servers",["kafka.topics","kafka.topics.regex"]],
                          "rAvro":["type","bind","port"],
                          "rMultiportsSyslogtcp":["type","host","ports"],
+                         "rTaildir":["type","filegroups","filegroups.f1"],
                          "kLogger":["type"],
                          "kAvro":["type","hostname","port"],
                          "kHDFS":["type","hdfs.path"],
